@@ -1,5 +1,5 @@
 const mysql = require("mysql")
-const Sequelize = require("sequelizer")
+const Sequelize = require("sequelize")
 const path = require("path")
 
 const dbPath = path.resolve(__dirname, 'chat.sql')
