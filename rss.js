@@ -1,4 +1,4 @@
-window.onload = () =>{
+window.onload = () => {
     let coindesk = "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"
     let coinnews = "https://www.coinnews.fr/feed"
     let content = document.querySelector(".content")
@@ -7,8 +7,8 @@ window.onload = () =>{
         type: 'GET',
         url: "https://api.rss2json.com/v1/api.json?rss_url=" + coindesk,
         dataType: 'jsonp',
-        success: function(result) {
-            for(let i = 0;i < result.items.length;i++){
+        success: function (result) {
+            for (let i = 0; i < result.items.length; i++) {
                 console.log(result)
                 let insideDiv = document.createElement("div")
                 let paragraphe = document.createElement("p")
@@ -36,8 +36,8 @@ window.onload = () =>{
         type: 'GET',
         url: "https://api.rss2json.com/v1/api.json?rss_url=" + coinnews,
         dataType: 'jsonp',
-        success: function(result) {
-            for(let i = 0;i < result.items.length;i++){
+        success: function (result) {
+            for (let i = 0; i < result.items.length; i++) {
                 console.log(result)
                 let insideDiv = document.createElement("div")
                 let paragraphe = document.createElement("p")
@@ -59,7 +59,4 @@ window.onload = () =>{
             }
         }
     });
-
-
 }
-
