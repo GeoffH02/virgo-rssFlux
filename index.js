@@ -1,7 +1,8 @@
 const express = require('express')
 const sqlite = require('sqlite3')
-const app = express()
+const fs = require('fs')
 const path = require("path")
+const app = express()
 const port = 5655
 const dbName = 'virgo_api.db'
 
@@ -27,6 +28,15 @@ let db = new sqlite.Database(dbName, err => {
 app.listen(port, () => {
     console.log("Server Started :\n","http://localhost:"+port +"/")
 })
+
+
+fs.readFile('config.json', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
 
 
 app.get("/", (req, res) => {

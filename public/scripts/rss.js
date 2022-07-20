@@ -1,6 +1,15 @@
 window.onload = () => {
     let coindesk = "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"
     let coinnews = "https://www.coinnews.fr/feed"
+    let cointelegraph = "https://cointelegraph.com/rss"
+    let newsBTC = "https://www.newsbtc.com/feed/"
+    let ambcCrypto = "https://ambcrypto.com/feed/"
+    let cryptoToast = "https://cryptoast.fr/feed/"
+    let bitcoinist = "https://bitcoinist.com/feed/"
+    let coingape = "https://coingape.com/feed/"
+
+
+
     let arrNews = []
     let content = document.querySelector(".content")
 
@@ -37,7 +46,7 @@ window.onload = () => {
 
     $.ajax({
         type: 'GET',
-        url: "https://api.rss2json.com/v1/api.json?rss_url=" + coindesk,
+        url: "https://api.rss2json.com/v1/api.json?rss_url=" + coinnews,
         dataType: 'jsonp',
         success: function (result) {
             for (let i = 0; i < result.items.length; i++) {
@@ -57,8 +66,17 @@ window.onload = () => {
                 for (let i = 0; i < jsonfile.tokens.length; i++) {
                     let obj = jsonfile.tokens[i];
                     let objParse = Object.keys(obj)
+                    let test
+                    if (title_split.some(isin => {
+                        if (objParse.includes(isin)) {
+                            let resultObj = isin
+                            let findBg = jsonfile.tokens[0][resultObj]
+                            let addArticles = findBg.linkToArticles.push(articleLink)
+                        }
 
-                    if (title_split.some(isin => objParse.includes(isin))){
+                       return  objParse.includes(isin)
+
+                    })){
 
                         paragraphe.append(title)
                         insideDiv.append(paragraphe)
@@ -68,17 +86,11 @@ window.onload = () => {
                         imageArticle.width = 150
                         createdAT.append(result.items[i].pubDate)
                         content.append(insideDiv)
-/*
-                        obj.linkToArticles = obj.linkToArticles + articleLink
-*/
-                        console.log(obj)
+
                     }
 
                 }
 
-
-
-                /*console.log(title.split(' '))*/
             }
         }
     });
@@ -90,7 +102,6 @@ window.onload = () => {
         dataType: 'jsonp',
         success: function (result) {
             for (let i = 0; i < result.items.length; i++) {
-                console.log(result)
                 let insideDiv = document.createElement("div")
                 let paragraphe = document.createElement("p")
                 let createdAT = document.createElement("p")

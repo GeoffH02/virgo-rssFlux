@@ -1,0 +1,29 @@
+{
+  "tokens": [{
+    "BTC": {
+      "id": 1,
+      "Articles": 3,
+      "lastFetch": 13.37,
+      "linkToArticles": []
+    },
+    "ETH": {
+      "id": 2,
+      "Articles": 3,
+      "lastFetch": 13.37,
+      "linkToArticles": []
+
+    },
+    "Virgo": {
+      "id": 3,
+      "Articles": 3,
+      "lastFetch": 13.37,
+      "linkToArticles": []
+    },
+    "NFT": {
+      "id": 3,
+      "Articles": 3,
+      "lastFetch": 13.37,
+      "linkToArticles": []
+    }
+  }]
+}
