@@ -1,4 +1,5 @@
 window.onload = () => {
+    const socket = io()
     let coindesk = "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"
     let coinnews = "https://www.coinnews.fr/feed"
     let cointelegraph = "https://cointelegraph.com/rss"
@@ -76,14 +77,21 @@ window.onload = () => {
                     let articleLink = linktoBlog.href = result.items[i].link
                     let articleLinkText = linktoBlog.textContent = "Redirect"
                     let title = `${result.items[i].title}`
+                    let description =  result.items[i].description
+
+                    var regex = /(<([^>]+)>)/ig
+                    let regexed = description.replace(regex, "");
+
+                    console.log(result);
                     let title_split = title.split(' ')
 
                     for (let i = 0; i < jsonfile.tokens.length; i++) {
                         let obj = jsonfile.tokens[i];
                         let objParse = Object.keys(obj)
+                        let resultObj
                         if (title_split.some(isin => {
                             if (objParse.includes(isin)) {
-                                let resultObj = isin
+                                 resultObj = isin
                                 let findBg = jsonfile.tokens[0][resultObj]
                                 let addArticles = findBg.linkToArticles.push(articleLink)
                                 console.log(result)
@@ -92,15 +100,24 @@ window.onload = () => {
                             return objParse.includes(isin)
 
                         })) {
-
+                            let date = result.items[i].pubDate
                             paragraphe.append(title)
                             insideDiv.append(paragraphe)
                             insideDiv.append(createdAT)
                             insideDiv.append(linktoBlog)
                             insideDiv.append(imageArticle)
                             imageArticle.width = 150
-                            createdAT.append(result.items[i].pubDate)
+                            createdAT.append(date)
                             content.append(insideDiv)
+
+                            socket.emit('news', {
+                                ticker: resultObj,
+                                title: title,
+                                desc: regexed,
+                                image: image,
+                                link: articleLink,
+                                date: date
+                            })
 
                         }
 
