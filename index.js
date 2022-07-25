@@ -27,7 +27,6 @@ io.on("connection", (socket) => {
     let db = new sqlite.Database(dbName, err => {
         if (err) throw err
         db.run('CREATE TABLE IF NOT EXISTS news(ticker,news_title,news_desc,news_img,news_link,pub_date)')
-        console.log("Base de donées op")
     })
 
     socket.on("news",(data) => {
