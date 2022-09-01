@@ -110,14 +110,38 @@ window.onload = () => {
                             createdAT.append(date)
                             content.append(insideDiv)
 
-                            socket.emit('news', {
+                            const news = {
+                                params : {
+                                    ticker: resultObj,
+                                    title: title,
+                                    desc: regexed,
+                                    image: image,
+                                    link: articleLink,
+                                    date: date
+                                }
+                            }
+
+
+                            const options = {
+                                method: 'POST',
+                                body: JSON.stringify({ok: "ok"})
+                            };
+
+                            fetch("/emitNews",options)
+                                .then( response => response
+                                )
+                                .then( response => {
+                                    console.log(response)
+                                } );
+
+/*                            socket.emit('news', {
                                 ticker: resultObj,
                                 title: title,
                                 desc: regexed,
                                 image: image,
                                 link: articleLink,
                                 date: date
-                            })
+                            })*/
 
                         }
 
