@@ -1,0 +1,25 @@
+{
+  "authorizedSite": {
+    "coindesk": {
+      "url": "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"
+    },
+    "coinnews": {
+      "url": "https://www.coinnews.fr/feed"
+    },
+    "cointelegraph": {
+      "url": "https://cointelegraph.com/rss"
+    },
+    "newsBTC": {
+      "url": "https://www.newsbtc.com/feed/"
+    },
+    "ambcCrypto": {
+      "url": "https://ambcrypto.com/feed/"
+    },
+    "bitcoinist": {
+      "url": "https://bitcoinist.com/feed/"
+    },
+    "coingape": {
+      "url": "https://coingape.com/feed/"
+    }
+  }
+}

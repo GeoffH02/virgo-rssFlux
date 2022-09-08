@@ -1,14 +1,14 @@
-window.onload = () => {
-    const socket = io()
+/*window.onload = () => {*/
+/*    const socket = io()
     let coindesk = "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"
     let coinnews = "https://www.coinnews.fr/feed"
     let cointelegraph = "https://cointelegraph.com/rss"
     let newsBTC = "https://www.newsbtc.com/feed/"
     let ambcCrypto = "https://ambcrypto.com/feed/"
     let bitcoinist = "https://bitcoinist.com/feed/"
-    let coingape = "https://coingape.com/feed/"
+    let coingape = "https://coingape.com/feed/"*/
 
-    let urlList = [coindesk,coinnews,cointelegraph,newsBTC,ambcCrypto,bitcoinist,coingape]
+    /*let urlList = [coindesk,coinnews,cointelegraph,newsBTC,ambcCrypto,bitcoinist,coingape]
 
     for (let ir = 0; ir < urlList.length; ir++ ){
 
@@ -134,14 +134,14 @@ window.onload = () => {
                                     console.log(response)
                                 } );
 
-/*                            socket.emit('news', {
+/!*                            socket.emit('news', {
                                 ticker: resultObj,
                                 title: title,
                                 desc: regexed,
                                 image: image,
                                 link: articleLink,
                                 date: date
-                            })*/
+                            })*!/
 
                         }
 
@@ -152,3 +152,5 @@ window.onload = () => {
         });
     }
 }
+*/
+
