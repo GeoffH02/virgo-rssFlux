@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@octokit/rest": "^19.0.4",
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "node": "^18.5.0",
+    "nodejs": "^0.0.0",
+    "path": "^0.12.7",
+    "rss-to-json": "^2.1.0",
+    "socketio": "^1.0.0",
+    "sqlite3": "^5.0.9"
+  },
+  "name": "virgo-rssflux",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "startDev": "nodemon index.js",
+    "start": "react-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeoffH02/virgo-rssFlux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeoffH02/virgo-rssFlux/issues"
+  },
+  "homepage": "https://github.com/GeoffH02/virgo-rssFlux#readme",
+  "description": ""
+}
