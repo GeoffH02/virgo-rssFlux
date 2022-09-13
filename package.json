@@ -19,8 +19,7 @@
     "nodemon": "^2.0.19"
   },
   "scripts": {
-    "startDev": "nodemon index.js",
-    "start": "react-scripts start"
+    "startDev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
